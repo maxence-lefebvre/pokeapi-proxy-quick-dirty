@@ -1,6 +1,7 @@
 const app = require('express')();
 const proxy = require('http-proxy-middleware');
 const HttpsProxyAgent = require('https-proxy-agent');
+const { middleware: cache } = require('apicache');
 
 const env = process.env;
 const options = {target: env.PROXY_TARGET, changeOrigin: true};
@@ -10,6 +11,6 @@ if (proxyServer) {
     options.agent = new HttpsProxyAgent(proxyServer);
 }
 
-app.use('/api', proxy(options));
+app.use('/api', cache(env.CACHE_DURATION || '1 day'), proxy(options));
 
-app.listen(env.APP_PORT || env.PORT);
+app.listen(env.APP_PORT || env.PORT || 3000);

@@ -13,11 +13,13 @@ If you use kubernetes
 
 ```
 # The port Node should listen to
-APP_PORT=3000
+PORT=3000
 # The proxy target
 PROXY_TARGET=https://pokeapi.co/
 # Your corporate proxy url (comment this line if it is already set in your environment variables)
 HTTPS_PROXY=http://my.corporate.proxy.corp:port
+# The cache duration
+CACHE_DURATION=1 day
 ```
 
 # Usage
