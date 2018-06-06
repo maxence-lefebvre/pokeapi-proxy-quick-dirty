@@ -12,4 +12,4 @@ if (proxyServer) {
 
 app.use('/api', proxy(options));
 
-app.listen(env.APP_PORT);
+app.listen(env.APP_PORT || env.PORT);
