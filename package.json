@@ -1,14 +1,14 @@
 {
-  "name": "proxy",
+  "name": "pokeapi-proxy",
   "version": "1.0.0",
-  "description": "",
+  "description": "A quick & dirty proxy to pokeapi to resolve CORS behind corporate proxies",
   "main": "index.js",
   "scripts": {
     "start": "dotenv node ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "dotenv-cli": "^1.4.0",
     "express": "^4.16.3",
